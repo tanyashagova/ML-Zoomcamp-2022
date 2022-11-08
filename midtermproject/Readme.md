@@ -21,25 +21,18 @@ Project folder contains
 
 ## Usage
 
-1. Make sure Pipenv and Docker are installed on your computer
-2. Install the project dependencies (*run this and following commands in a terminal, from the root of a cloned repository*):
-```sh
-pipenv install
-```
-```sh
-pipenv shell
-```
-3. Build docker container by runing:
+1. Build an image from a Dockerfile by running following command:
 ```sh
 docker build -t attrition-project .
 ```
-4. Run service by command:
+2. Run service by command:
 ```sh
 docker run --rm -it -p 8080:8080 -d  attrition-project
 ```
-5. Run test.py to see attrition prediction on given data.
+3. Run test.py to see attrition prediction on given data.
 
 After that you will see following:
+
 ![Result_image](screen.png)
 
-6. Try to change different parameters in record from test.py.
+4. Try to change different parameters in record from test.py and see attrition result.
