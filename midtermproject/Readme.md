@@ -1,8 +1,8 @@
-This is a midterm project at ML-Zoomcamp-2022 cource. It is aimed to solve the employees attrition problem at the company. Model used here makes prediction of attrition of valuable employees. 
+This is a midterm project at ML-Zoomcamp-2022 course. It is aimed to solve the employees attrition problem at the company. Model used here makes prediction of attrition of valuable employees. 
 
 This project uses a fictional [dataset of employees attrition](https://www.kaggle.com/datasets/whenamancodes/hr-employee-attrition) created by IBM data scientists.
 
-To run the project you can download the dataset from [Kaggle](https://www.kaggle.com/datasets/whenamancodes/hr-employee-attrition) or from the [project folder](https://github.com/tanyashagova/ML-Zoomcamp-2022/blob/main/midtermproject/HR%20Employee%20Attrition.csv) on GitHub.
+You can download the dataset from [Kaggle](https://www.kaggle.com/datasets/whenamancodes/hr-employee-attrition) or from the [project folder](https://github.com/tanyashagova/ML-Zoomcamp-2022/blob/main/midtermproject/HR%20Employee%20Attrition.csv) on GitHub.
 
 
 ## Description
@@ -16,3 +16,30 @@ Project folder contains
 * Script `predict.py` with model loading and serving it via a web serice (with Flask)
 * `Pipenv` and `Pipenv.lock` files with dependencies
 * `Dockerfile` for running the service
+* Script `test.py` with test prediction for data of given person 
+
+
+## Usage
+
+1. Make sure Pipenv and Docker are installed on your computer
+2. Install the project dependencies (*run this and following commands in a terminal, from the root of a cloned repository*):
+```sh
+pipenv install
+```
+```sh
+pipenv shell
+```
+3. Build docker container by runing:
+```sh
+docker build -t attrition-project .
+```
+4. Run service by command:
+```sh
+docker run --rm -it -p 8080:8080 -d  attrition-project
+```
+5. Run test.py to see attrition prediction on given data.
+
+After that you will see following:
+![Result_image](screen.png)
+
+6. Try to change different parameters in record from test.py.
